@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>WebRTC Peer</title>
+</head>
+
+<body>
+  <div class="title">
+    <h1>Realtime communication with WebRTC</h1>
+  </div>
+  <div id="videos">
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay></video>
+  </div>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin-top: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 20px;
+    }
+
+    #videos {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+    }
+
+    video {
+      width: 45%;
+      height: 300px;
+    }
+
+    #local-video {
+      border: 2px dashed lime;
+      margin-right: 1%;
+    }
+
+    #remote-video {
+      border: 2px dashed red;
+    }
+  </style>
+
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="src/peer.js"></script>
+</body>
+
+</html>

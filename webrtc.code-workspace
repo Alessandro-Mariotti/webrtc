@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "webrtc-web"
+		},
+		{
+			"path": "peer"
+		}
+	],
+	"settings": {}
+}
