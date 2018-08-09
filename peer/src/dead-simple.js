@@ -33,7 +33,7 @@ function gotIceCandidate(event) {
 
 function gotRemoteStream(event) {
     console.log('got remote stream');
-    remoteVideo.src = window.URL.createObjectURL(event.stream);
+    remoteVideo.srcObject = event.stream;
 }
 
 function createOfferError(error) {
