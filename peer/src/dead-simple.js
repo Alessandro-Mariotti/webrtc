@@ -20,9 +20,9 @@ function start(isCaller) {
 
 function gotDescription(description) {
     console.log('got description');
-    peerConnection.setLocalDescription(description, function() {
+    peerConnection.setLocalDescription(description).then(() => {
         serverConnection.send(JSON.stringify({ 'sdp': description }));
-    }, function() { console.log('set description error') });
+    }).catch(error => console.log('set description error', error))
 }
 
 function gotIceCandidate(event) {
