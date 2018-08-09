@@ -4,7 +4,10 @@
 			"path": "webrtc-web"
 		},
 		{
-			"path": "peer"
+			"path": "p2p-video-chat-webrtc"
+		},
+		{
+			"path": "p2p-video-chat-webrtc-electron"
 		}
 	],
 	"settings": {}
