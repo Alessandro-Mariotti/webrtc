@@ -45,11 +45,11 @@ function gotMessageFromServer(message) {
 
     var signal = JSON.parse(message.data);
     if (signal.sdp) {
-        peerConnection.setRemoteDescription(new RTCSessionDescription(signal.sdp), function() {
+        peerConnection.setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(() => {
             if (signal.sdp.type == 'offer') {
                 peerConnection.createAnswer(gotDescription, createAnswerError);
             }
-        });
+        }).catch(error => console.log(error));
     } else if (signal.ice) {
         peerConnection.addIceCandidate(new RTCIceCandidate(signal.ice));
     }
