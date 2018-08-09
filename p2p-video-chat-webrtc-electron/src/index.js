@@ -1,9 +1,10 @@
+const Peer = require('simple-peer');
+
 function main(initiator) {
     navigator.mediaDevices.getUserMedia({
         video: true,
         audio: false
     }).then(stream => {
-        const Peer = require('simple-peer');
         const config = {
             initiator: initiator,
             trickle: false,
@@ -42,4 +43,8 @@ function main(initiator) {
 
 document.getElementById('start').addEventListener('click', () => {
     main(true);
+});
+
+document.getElementById('peer').addEventListener('click', () => {
+    main(false);
 });
