@@ -67,10 +67,10 @@ function pageReady() {
         audio: true,
     };
 
-    navigator.mediaDevices.getUserMedia(constraints, stream => {
+    navigator.mediaDevices.getUserMedia(constraints).then(stream => {
         localStream = stream;
         localVideo.srcObject = stream;
-    }, error => console.warn(error));
+    }).catch(error => console.log(error));
 }
 
 pageReady();
